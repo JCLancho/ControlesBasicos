@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Ejercicio 1-->
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Sumar"
+        app:layout_constraintStart_toStartOf="@+id/segundoValor"
+        app:layout_constraintTop_toBottomOf="@+id/segundoValor"
+        />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el segundo valor:"
+        app:layout_constraintStart_toStartOf="@+id/primerValor"
+        app:layout_constraintTop_toBottomOf="@+id/primerValor" />
+
+    <EditText
+        android:id="@+id/segundoValor"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/textview" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Sumar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el primer valor:"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/primerValor"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="La suma es:"
+        app:layout_constraintStart_toStartOf="@+id/segundoValor"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+<!--Ejercicio 2-->
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Operar"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/segundoValor"
+        tools:layout_editor_absoluteX="-64dp">
+
+        <Button
+            android:id="@+id/sumar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="+"
+            android:onClick="operar"/>
+
+        <Button
+            android:id="@+id/restar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            android:text="-"
+            android:onClick="operar"/>
+
+        <Button
+            android:id="@+id/multiplicar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            android:text="*"
+            android:onClick="operar"/>
+
+        <Button
+            android:id="@+id/dividir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:layout_weight="1"
+            android:text="/"
+            android:onClick="operar"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el segundo valor:"
+        app:layout_constraintStart_toStartOf="@+id/primerValor"
+        app:layout_constraintTop_toBottomOf="@+id/primerValor" />
+
+    <EditText
+        android:id="@+id/segundoValor"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/textview" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el primer valor:"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/primerValor"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="56dp"
+        android:text="Resultado:"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+<!--Ejercicio 3 -->
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/fondo">
+
+
+    <Button
+        android:id="@+id/encender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="colorFondo"
+        android:text="Encender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/apagar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/apagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:onClick="colorFondo"
+        android:text="Apagar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/encender"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+<!--Ejercicio 4-->
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Letra DNI"
+        tools:layout_editor_absoluteX="-16dp"
+        android:onClick="validar"/>
+
+    <TextView
+        android:id="@+id/introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Introduce un DNI:"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Numero DNI"
+        android:inputType="number"
+        android:maxLength="8"
+        app:layout_constraintStart_toStartOf="@+id/introduce"
+        app:layout_constraintTop_toBottomOf="@+id/introduce" />
+
+    <EditText
+        android:id="@+id/letra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="3"
+        android:hint="Letra"
+        android:inputType="textCapCharacters"
+        android:lines="4"
+        android:maxLength="1"
+        app:layout_constraintStart_toEndOf="@+id/numero"
+        app:layout_constraintTop_toBottomOf="@+id/introduce" />
+
+    <Button
+        android:id="@+id/validar"
+        android:layout_width="347dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="40dp"
+        android:onClick="validar"
+        android:text="Valida DNI"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/numero"
+        app:layout_constraintTop_toBottomOf="@+id/numero" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="337dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/validar"
+        app:layout_constraintStart_toStartOf="@+id/validar"
+        app:layout_constraintTop_toBottomOf="@+id/validar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+<!--Ejercicio 5 -->
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Click Botones"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Button
+        android:id="@+id/yahoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="80dp"
+        android:text="YAHOO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:onClick="yahoo"/>
+
+    <Button
+        android:id="@+id/bing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="BING"
+        app:layout_constraintStart_toEndOf="@+id/yahoo"
+        app:layout_constraintTop_toTopOf="@+id/yahoo" />
+
+    <Button
+        android:id="@+id/google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="GOOGLE"
+        app:layout_constraintStart_toEndOf="@+id/bing"
+        app:layout_constraintTop_toTopOf="@+id/bing" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="333dp"
+        android:layout_height="285dp"
+        android:layout_marginTop="64dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/yahoo"
+        app:layout_constraintTop_toBottomOf="@+id/bing" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+<!-- Ejercicio 6 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Domotica"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:id="@+id/camara1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Cámara 1:"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/luz1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Luz 1:"
+        app:layout_constraintStart_toStartOf="@+id/camara1"
+        app:layout_constraintTop_toBottomOf="@+id/camara1" />
+
+    <TextView
+        android:id="@+id/camara2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Cámara 2:"
+        app:layout_constraintStart_toStartOf="@+id/luz1"
+        app:layout_constraintTop_toBottomOf="@+id/luz1" />
+
+    <TextView
+        android:id="@+id/luz2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Luz 2:"
+        app:layout_constraintStart_toStartOf="@+id/camara2"
+        app:layout_constraintTop_toBottomOf="@+id/camara2" />
+
+    <Switch
+        android:id="@+id/switchCamara1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="28dp"
+        android:checked="true"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:onClick="toggleCamara"/>
+
+    <Switch
+        android:id="@+id/switchLuz1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/switchCamara1"
+        app:layout_constraintTop_toBottomOf="@+id/switchCamara1"
+        android:onClick="toggleLuz"/>
+
+    <ToggleButton
+        android:id="@+id/botonCamara2"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
+        android:checked="true"
+        android:textOff="NO"
+        android:textOn="SÍ"
+        app:layout_constraintEnd_toEndOf="@+id/switchLuz1"
+        app:layout_constraintStart_toStartOf="@+id/switchLuz1"
+        app:layout_constraintTop_toBottomOf="@+id/switchLuz1"
+        android:onClick="toggleCamara"/>
+
+    <ToggleButton
+        android:id="@+id/botonLuz2"
+        android:layout_width="53dp"
+        android:layout_height="35dp"
+        android:textOff="NO"
+        android:textOn="SÍ"
+        app:layout_constraintStart_toStartOf="@+id/botonCamara2"
+        app:layout_constraintTop_toBottomOf="@+id/botonCamara2"
+        android:onClick="toggleLuz" />
+
+    <ImageView
+        android:id="@+id/imagenCamara1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="@+id/luz2"
+        app:layout_constraintTop_toBottomOf="@+id/luz2"
+        app:srcCompat="@drawable/camara" />
+
+    <ImageView
+        android:id="@+id/imagenLuz1"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imagenCamara1"
+        app:layout_constraintTop_toTopOf="@+id/imagenCamara1"
+        app:srcCompat="@drawable/bombilla_apagada" />
+
+    <ImageView
+        android:id="@+id/imagenCamara2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imagenLuz1"
+        app:layout_constraintTop_toTopOf="@+id/imagenLuz1"
+        app:srcCompat="@drawable/camara" />
+
+    <ImageView
+        android:id="@+id/imagenLuz2"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imagenCamara2"
+        app:layout_constraintTop_toTopOf="@+id/imagenCamara2"
+        app:srcCompat="@drawable/bombilla_apagada" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
