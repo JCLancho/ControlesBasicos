@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -208,6 +209,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 */
 
 //Ejercicio 6
+/*
 public class MainActivity extends AppCompatActivity {
 
     private ToggleButton botonCamara2, botonLuz2;
@@ -248,15 +250,104 @@ public class MainActivity extends AppCompatActivity {
     public void toggleLuz(View v){
         if(botonLuz2.isChecked()){
             imagenLuz2.setImageResource(R.drawable.bombilla_encendida);
+            imagenLuz2.setContentDescription(getString(R.string.encendida));
         }else{
             imagenLuz2.setImageResource(R.drawable.bombilla_apagada);
+            imagenLuz2.setContentDescription(getString(R.string.apagada));
         }
 
         if(switchLuz1.isChecked()){
             imagenLuz1.setImageResource(R.drawable.bombilla_encendida);
+            imagenLuz1.setContentDescription(getString(R.string.encendida));
         }else{
             imagenLuz1.setImageResource(R.drawable.bombilla_apagada);
+            imagenLuz1.setContentDescription(getString(R.string.apagada));
         }
     }
+
+}
+*/
+
+//Ejercicio 7
+public class MainActivity extends AppCompatActivity {
+
+    private ToggleButton botonCamara2, botonLuz2;
+    private Switch switchCamara1, switchLuz1;
+    private ImageView imagenCamara1, imagenCamara2, imagenLuz1, imagenLuz2,imagenSol;
+    private SeekBar seekBar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        botonCamara2 = findViewById(R.id.botonCamara2);
+        botonLuz2 = findViewById(R.id.botonLuz2);
+        switchCamara1 = findViewById(R.id.switchCamara1);
+        switchLuz1 = findViewById(R.id.switchLuz1);
+        imagenCamara1 = findViewById(R.id.imagenCamara1);
+        imagenCamara2 = findViewById(R.id.imagenCamara2);
+        imagenLuz1 = findViewById(R.id.imagenLuz1);
+        imagenLuz2 = findViewById(R.id.imagenLuz2);
+        imagenSol = findViewById(R.id.imagenSol);
+        seekBar = findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                imagenSol.setAlpha(progress/100f);
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+                //imagenSol.setAlpha(0.8f);
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+               // imagenSol.setAlpha(0.2f);
+
+            }
+        });
+
+    }
+
+    public void toggleCamara(View v){
+        if(botonCamara2.isChecked()){
+            imagenCamara2.setImageResource(R.drawable.camara);
+        }else{
+            imagenCamara2.setImageResource(0);
+        }
+
+        if(switchCamara1.isChecked()){
+            imagenCamara1.setImageResource(R.drawable.camara);
+        }else{
+            imagenCamara1.setImageResource(0);
+        }
+    }
+
+    public void toggleLuz(View v){
+        if(botonLuz2.isChecked()){
+            imagenLuz2.setImageResource(R.drawable.bombilla_encendida);
+            imagenLuz2.setContentDescription(getString(R.string.encendida));
+        }else{
+            imagenLuz2.setImageResource(R.drawable.bombilla_apagada);
+            imagenLuz2.setContentDescription(getString(R.string.apagada));
+        }
+
+        if(switchLuz1.isChecked()){
+            imagenLuz1.setImageResource(R.drawable.bombilla_encendida);
+            imagenLuz1.setContentDescription(getString(R.string.encendida));
+        }else{
+            imagenLuz1.setImageResource(R.drawable.bombilla_apagada);
+            imagenLuz1.setContentDescription(getString(R.string.apagada));
+        }
+    }
+
 
 }

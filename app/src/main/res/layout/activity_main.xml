@@ -393,6 +393,7 @@ tools:context=".MainActivity">
 -->
 
 <!-- Ejercicio 6 -->
+<!--
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -416,7 +417,7 @@ tools:context=".MainActivity">
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="Cámara 1:"
+        android:text="@string/camara"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -425,7 +426,7 @@ tools:context=".MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Luz 1:"
+        android:text="@string/luz1"
         app:layout_constraintStart_toStartOf="@+id/camara1"
         app:layout_constraintTop_toBottomOf="@+id/camara1" />
 
@@ -434,7 +435,7 @@ tools:context=".MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Cámara 2:"
+        android:text="@string/camara2"
         app:layout_constraintStart_toStartOf="@+id/luz1"
         app:layout_constraintTop_toBottomOf="@+id/luz1" />
 
@@ -443,7 +444,7 @@ tools:context=".MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Luz 2:"
+        android:text="@string/luz2"
         app:layout_constraintStart_toStartOf="@+id/camara2"
         app:layout_constraintTop_toBottomOf="@+id/camara2" />
 
@@ -471,8 +472,8 @@ tools:context=".MainActivity">
         android:layout_width="53dp"
         android:layout_height="36dp"
         android:checked="true"
-        android:textOff="NO"
-        android:textOn="SÍ"
+        android:textOff="@string/no"
+        android:textOn="@string/si"
         app:layout_constraintEnd_toEndOf="@+id/switchLuz1"
         app:layout_constraintStart_toStartOf="@+id/switchLuz1"
         app:layout_constraintTop_toBottomOf="@+id/switchLuz1"
@@ -482,8 +483,8 @@ tools:context=".MainActivity">
         android:id="@+id/botonLuz2"
         android:layout_width="53dp"
         android:layout_height="35dp"
-        android:textOff="NO"
-        android:textOn="SÍ"
+        android:textOff="@string/no"
+        android:textOn="@string/si"
         app:layout_constraintStart_toStartOf="@+id/botonCamara2"
         app:layout_constraintTop_toBottomOf="@+id/botonCamara2"
         android:onClick="toggleLuz" />
@@ -495,7 +496,8 @@ tools:context=".MainActivity">
         android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="@+id/luz2"
         app:layout_constraintTop_toBottomOf="@+id/luz2"
-        app:srcCompat="@drawable/camara" />
+        app:srcCompat="@drawable/camara"
+        android:contentDescription="@string/camara"/>
 
     <ImageView
         android:id="@+id/imagenLuz1"
@@ -504,7 +506,8 @@ tools:context=".MainActivity">
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toEndOf="@+id/imagenCamara1"
         app:layout_constraintTop_toTopOf="@+id/imagenCamara1"
-        app:srcCompat="@drawable/bombilla_apagada" />
+        app:srcCompat="@drawable/bombilla_apagada"
+        android:contentDescription="@string/apagada"/>
 
     <ImageView
         android:id="@+id/imagenCamara2"
@@ -513,7 +516,8 @@ tools:context=".MainActivity">
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toEndOf="@+id/imagenLuz1"
         app:layout_constraintTop_toTopOf="@+id/imagenLuz1"
-        app:srcCompat="@drawable/camara" />
+        app:srcCompat="@drawable/camara"
+        android:contentDescription="@string/camara"/>
 
     <ImageView
         android:id="@+id/imagenLuz2"
@@ -522,7 +526,172 @@ tools:context=".MainActivity">
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toEndOf="@+id/imagenCamara2"
         app:layout_constraintTop_toTopOf="@+id/imagenCamara2"
-        app:srcCompat="@drawable/bombilla_apagada" />
+        app:srcCompat="@drawable/bombilla_apagada"
+        android:contentDescription="@string/apagada"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+
+<!-- Ejercicio 7 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Domotica"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:id="@+id/camara1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/camara1"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/luz1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/luz1"
+        app:layout_constraintStart_toStartOf="@+id/camara1"
+        app:layout_constraintTop_toBottomOf="@+id/camara1" />
+
+    <TextView
+        android:id="@+id/camara2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/camara2"
+        app:layout_constraintStart_toStartOf="@+id/luz1"
+        app:layout_constraintTop_toBottomOf="@+id/luz1" />
+
+    <TextView
+        android:id="@+id/luz2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/luz2"
+        app:layout_constraintStart_toStartOf="@+id/camara2"
+        app:layout_constraintTop_toBottomOf="@+id/camara2" />
+
+    <Switch
+        android:id="@+id/switchCamara1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="28dp"
+        android:checked="true"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:onClick="toggleCamara"/>
+
+    <Switch
+        android:id="@+id/switchLuz1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/switchCamara1"
+        app:layout_constraintTop_toBottomOf="@+id/switchCamara1"
+        android:onClick="toggleLuz"/>
+
+    <ToggleButton
+        android:id="@+id/botonCamara2"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
+        android:checked="true"
+        android:textOff="@string/no"
+        android:textOn="@string/si"
+        app:layout_constraintEnd_toEndOf="@+id/switchLuz1"
+        app:layout_constraintStart_toStartOf="@+id/switchLuz1"
+        app:layout_constraintTop_toBottomOf="@+id/switchLuz1"
+        android:onClick="toggleCamara"/>
+
+    <ToggleButton
+        android:id="@+id/botonLuz2"
+        android:layout_width="53dp"
+        android:layout_height="35dp"
+        android:textOff="@string/no"
+        android:textOn="@string/si"
+        app:layout_constraintStart_toStartOf="@+id/botonCamara2"
+        app:layout_constraintTop_toBottomOf="@+id/botonCamara2"
+        android:onClick="toggleLuz" />
+
+    <ImageView
+        android:id="@+id/imagenCamara1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="@+id/luz2"
+        app:layout_constraintTop_toBottomOf="@+id/luz2"
+        app:srcCompat="@drawable/camara"
+        android:contentDescription="@string/camara"/>
+
+    <ImageView
+        android:id="@+id/imagenLuz1"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imagenCamara1"
+        app:layout_constraintTop_toTopOf="@+id/imagenCamara1"
+        app:srcCompat="@drawable/bombilla_apagada"
+        android:contentDescription="@string/apagada"/>
+
+    <ImageView
+        android:id="@+id/imagenCamara2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imagenLuz1"
+        app:layout_constraintTop_toTopOf="@+id/imagenLuz1"
+        app:srcCompat="@drawable/camara"
+        android:contentDescription="@string/camara"/>
+
+    <ImageView
+        android:id="@+id/imagenLuz2"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@+id/imagenCamara2"
+        app:layout_constraintTop_toTopOf="@+id/imagenCamara2"
+        app:srcCompat="@drawable/bombilla_apagada"
+        android:contentDescription="@string/apagada"/>
+
+    <android.widget.SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="137dp"
+        android:layout_height="157dp"
+        android:max="100"
+        android:progress="100"
+        android:rotation="270"
+        android:splitTrack="false"
+        app:layout_constraintStart_toEndOf="@+id/imagenSol"
+        app:layout_constraintTop_toTopOf="@+id/imagenSol" />
+
+    <ImageView
+        android:id="@+id/imagenSol"
+        android:layout_width="156dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="44dp"
+        android:alpha="1"
+        app:layout_constraintStart_toStartOf="@+id/imagenCamara1"
+        app:layout_constraintTop_toBottomOf="@+id/imagenCamara1"
+        app:srcCompat="@drawable/sol"
+        android:contentDescription="@string/persiana"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
